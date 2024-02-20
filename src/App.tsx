@@ -1,18 +1,20 @@
+import { ThemeProvider } from 'styled-components'
 import Header from './components/Cabecalho'
 import Hero from './components/Hero'
 import ListaVagas from './containers/ListaVagas'
-
-import './global.css'
+import StyledGlobal, { Container } from './styles'
+import themeLight from './theme/light'
 
 function App() {
   return (
-    <>
-      <Header />
+    <ThemeProvider theme={themeLight}>
+      <StyledGlobal />
+      <Header>EBAC</Header>
       <Hero />
-      <div className="container">
+      <Container>
         <ListaVagas />
-      </div>
-    </>
+      </Container>
+    </ThemeProvider>
   )
 }
 
